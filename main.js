@@ -17,7 +17,7 @@ var currentPlayerEmoji = "👽";
 
 // Event Listeners
 window.addEventListener("load", loadGame);
-gameBoard.addEventListener("click", move);
+gameBoard.addEventListener("click", playerMove);
 
 // Functions
 function createGame(players) {
@@ -89,6 +89,13 @@ function createGame(players) {
   return game;
 }
 
+function loadGame() {
+  game = new createGame();
+  gameBoard.innerHTML = displayBoard();
+  loadFromStorage();
+  displayHistory();
+}
+
 function createPlayer(marker) {
   var player = {};
   player.marker = marker;
@@ -127,4 +134,50 @@ function createInitialBoard() {
     c2: "",
     c3: "",
   };
+}
+
+function displayBoard() {
+  var boardHTML = "<table>";
+  for (var i = 1; i <= 3; i++) {
+    boardHTML += "<tr>";
+    for (var j = 1; j <= 3; j++) {
+      var spaceId = String.fromCharCode(96 + i) + j;
+      var winning = game.winningLine.includes(spaceId) ? " winning" : "";
+      var spaceValue = game.winningLine.includes(spaceId)
+        ? "🪐"
+        : game.board[spaceId];
+      boardHTML +=
+        '<td id="' +
+        spaceId +
+        '" class="space' +
+        winning +
+        '">' +
+        spaceValue +
+        "</td>";
+    }
+    boardHTML += "</tr>";
+  }
+  boardHTML += "</table>";
+  return boardHTML;
+}
+
+function playerMove(event) {
+  var spaceId = event.target.id;
+  var currentPlayer = game.currentPlayer;
+  if (game.board[spaceId] === "" && !game.won) {
+    game.board[spaceId] = currentPlayer.marker;
+    checkWin();
+    game.turnUpkeep();
+    gameBoard.innerHTML = displayBoard();
+    changeBroadcast();
+    updateHeader();
+    checkWin();
+
+    if (game.won) {
+      updateHeader();
+      displayHistory();
+      saveToStorage();
+      setTimeout(checkToRestart, 1500);
+    }
+  }
 }
