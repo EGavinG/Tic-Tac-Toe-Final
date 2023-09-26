@@ -5,7 +5,7 @@ Aliens have decided to finally invade Earth! Took them long enough its 2023...
 We must defend the planet from their invasion in a battle across the galaxy.
 Guess how we will be doing that?
 
-# ~A GAME OF TIC TAC TOE~
+# A GAME OF TIC TAC TOE!
 
 This project allows two players to sit together and play out a game of Tic Tac Toe. Since Aliens are attacking earth Aliens will always go first so first move click initiates that. The game will keep score to their respective scoreboard. It will automatically reset the board after 10 wins thus declaring the rightful winner of the world. Header updates showcasing each players turn, winner, and draw. I've included a reset score button to those who are only wanting to play shorter games as well as color change button to change the color style for fun preference.
 
