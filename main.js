@@ -242,3 +242,28 @@ function saveToStorage() {
     }
   }
 }
+
+function updateHeader() {
+  if (game.won) {
+    header.textContent = game.won;
+    moveIndicator.textContent = "";
+  } else if (game.won === "DRAW!") {
+    header.textContent = game.won;
+    moveIndicator.textContent = "";
+  } else {
+    var currentPlayerEmoji =
+      game.currentPlayer === game.players.x ? "👽" : "🧑🏽‍🚀";
+    header.textContent =
+      currentPlayerEmoji + " " + game.currentPlayer.marker + "'s turn";
+    moveIndicator.textContent =
+      currentPlayerEmoji + " " + game.currentPlayer.marker + "'s turn";
+  }
+}
+
+function changeBroadcast() {
+  var currentPlayer = game.currentPlayer;
+  var broadcastMessage = game.won
+    ? game.won
+    : currentPlayer.marker + "'s turn:";
+  broadcast.innerHTML = broadcastMessage;
+}
