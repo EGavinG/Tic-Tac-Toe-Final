@@ -35,6 +35,17 @@ section {
   justify-content: center;
 }
 
+button {
+  font-family: "Press Start 2P", cursive;
+  font-size: large;
+  color: #63ec13;
+  border: 3px solid #63ec13;
+  background-color: transparent;
+  border-radius: 10px;
+  width: 250px;
+  height: 80px;
+}
+
 .player-emoji {
   font-size: 100px;
   margin: 0px;
@@ -80,7 +91,7 @@ table {
   table-layout: fixed;
 }
 td {
-  border: 3px solid #63ec13;
+  border: 3px solid;
   text-align: center;
   padding: 8px;
   font-size: 50px;
