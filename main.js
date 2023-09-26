@@ -208,3 +208,37 @@ function displayHistory() {
   player1Score.innerHTML = "<h5>Alien's Score<br>" + player1Wins + "</h5>";
   player2Score.innerHTML = "<h5>Human's Score<br>" + player2Wins + "</h5>";
 }
+
+function checkToRestart() {
+  var winner = game.currentPlayer;
+  var loser = game.players.x === winner ? game.players.o : game.players.x;
+
+  restartGame(loser);
+  updateHeader();
+}
+
+function restartGame(loser) {
+  game = new createGame(game.players);
+  game.currentPlayer =
+    loser === game.players.x ? game.players.o : game.players.x;
+  gameBoard.innerHTML = displayBoard();
+  body.classList.toggle("inverted-body");
+  updateHeader();
+}
+
+function increaseWins(player) {
+  player.wins.push(true);
+  var player1Wins = game.players.x.wins.length;
+  var player2Wins = game.players.o.wins.length;
+}
+
+function saveToStorage() {
+  for (var player in game.players) {
+    if (game.players[player].wins.length >= 10) {
+      game.players[player].wins = [];
+      localStorage.removeItem(game.players[player].marker + "Player");
+    } else {
+      game.players[player].saveToStorage();
+    }
+  }
+}
