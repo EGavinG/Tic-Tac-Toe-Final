@@ -1,0 +1,114 @@
+body {
+  background-image: url("assets/HuGGeENt6kGyixe3hT9tnY-1920-80.jpg.webp");
+  background-blend-mode: hard-light;
+  background-color: black;
+  color: #63ec13;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100vh;
+  margin: 5px;
+  position: fixed;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  text-align: center;
+  font-family: "Press Start 2P", cursive;
+  font-size: 45px;
+  width: 900px;
+  height: 100px;
+  font-style: oblique;
+  border: 3px solid #63ec13;
+  border-radius: 25px;
+  margin: 10px;
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+button {
+  font-family: "Press Start 2P", cursive;
+  font-size: large;
+  color: #63ec13;
+  border: 3px solid #63ec13;
+  background-color: transparent;
+  border-radius: 10px;
+  width: 250px;
+  height: 80px;
+}
+
+
+.player-emoji {
+  font-size: 100px;
+  margin: 0px;
+}
+
+.player-title,
+.player-1-win-count,
+.player-1-loss-count,
+.player-1-draw-count,
+.player-2-win-count,
+.player-2-loss-count,
+.player-2-draw-count,
+.move-indicator {
+  color: #63ec13;
+  font-family: "Press Start 2P", cursive;
+  font-size: 35px;
+  margin: 0px;
+}
+
+.player1-area,
+.player2-area {
+  text-align: center;
+  width: 25%;
+  height: 500px;
+  margin: 25px;
+  border: 3px solid #63ec13;
+  border-radius: 25px;
+}
+
+.game-area {
+  text-align: center;
+  width: 50%;
+  height: 600px;
+  margin: 25px;
+  margin-top: 50px;
+}
+
+table {
+  margin: auto;
+  height: 80%;
+  width: 80%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+td {
+  border: 3px solid;
+  text-align: center;
+  padding: 8px;
+  font-size: 50px;
+  width: 33.33%;
+  height: 33.33%;
+}
+td:first-child {
+  border-left: none;
+}
+td:last-child {
+  border-right: none;
+}
+tr:first-child td {
+  border-top: none;
+}
+tr:last-child td {
+  border-bottom: none;
+}
