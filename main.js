@@ -181,3 +181,30 @@ function playerMove(event) {
     }
   }
 }
+
+function loadFromStorage() {
+  for (var player in game.players) {
+    game.players[player].loadWinsFromStorage();
+  }
+}
+
+function checkWin() {
+  game.checkWinCondition();
+  game.checkDraw();
+}
+
+function displayHistory() {
+  var player1Wins = game.players.x.wins.length;
+  var player2Wins = game.players.o.wins.length;
+
+  if (player1Wins >= 10 || player2Wins >= 10) {
+    game.players.x.wins = [];
+    game.players.o.wins = [];
+    localStorage.removeItem("🛸Player");
+    localStorage.removeItem("🚀Player");
+    player1Wins = player2Wins = 0;
+  }
+
+  player1Score.innerHTML = "<h5>Alien's Score<br>" + player1Wins + "</h5>";
+  player2Score.innerHTML = "<h5>Human's Score<br>" + player2Wins + "</h5>";
+}
