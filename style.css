@@ -35,6 +35,7 @@ section {
   justify-content: center;
 }
 
+<<<<<<< HEAD
 button {
   font-family: "Press Start 2P", cursive;
   font-size: large;
@@ -46,6 +47,8 @@ button {
   height: 80px;
 }
 
+=======
+>>>>>>> c568eb85378f0fd2440ae8f27e31438a736c6627
 .player-emoji {
   font-size: 100px;
   margin: 0px;
@@ -91,7 +94,11 @@ table {
   table-layout: fixed;
 }
 td {
+<<<<<<< HEAD
   border: 3px solid;
+=======
+  border: 3px solid #63ec13;
+>>>>>>> c568eb85378f0fd2440ae8f27e31438a736c6627
   text-align: center;
   padding: 8px;
   font-size: 50px;
