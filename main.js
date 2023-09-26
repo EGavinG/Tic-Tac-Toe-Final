@@ -9,6 +9,8 @@ var player1Draw = document.querySelector(".player-1-draw-count");
 var player2Draw = document.querySelector(".player-2-draw-count");
 var header = document.querySelector("header");
 var moveIndicator = document.querySelector("#moveIndicator");
+var resetButton = document.querySelector(".reset-score");
+var cssButton = document.querySelector(".change-color");
 
 // Global Variables
 var game;
@@ -18,6 +20,8 @@ var currentPlayerEmoji = "👽";
 // Event Listeners
 window.addEventListener("load", loadGame);
 gameBoard.addEventListener("click", playerMove);
+resetButton.addEventListener("click", resetCounter);
+cssButton.addEventListener("click", changeRandomCssColor);
 
 // Functions
 function createGame(players) {
@@ -266,4 +270,33 @@ function changeBroadcast() {
     ? game.won
     : currentPlayer.marker + "'s turn:";
   broadcast.innerHTML = broadcastMessage;
+}
+
+function resetCounter() {
+  game.players.x.wins = [];
+  game.players.o.wins = [];
+  game.players.x.draws = [];
+  game.players.o.draws = [];
+  displayHistory();
+  saveToStorage();
+}
+
+function getRandomColor() {
+  var letters = "0123456789ABCDEF";
+  var color = "#";
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+function changeRandomCssColor() {
+  var randomColor = getRandomColor();
+  var elementsToChange = document.querySelectorAll("*");
+
+  for (var i = 0; i < elementsToChange.length; i++) {
+    var element = elementsToChange[i];
+    element.style.color = randomColor;
+    element.style.borderColor = randomColor;
+  }
 }
