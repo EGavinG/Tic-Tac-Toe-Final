@@ -47,3 +47,7 @@ Would like to build more into this project once I learn animation and soundfx to
 ## Timeline (Iterations)
 
 Github Project [Link](https://github.com/users/EGavinG/projects/2)
+
+## Gif
+
+![Gif of game at play](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWYxNjh0ZnVpbmt3MnhxajlnZjg4OW85a2JvOW96cGM1djlqdjlzcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kLRXv0BCIGuIbzGJWx/giphy.gif)
