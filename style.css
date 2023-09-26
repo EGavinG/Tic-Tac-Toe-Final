@@ -35,6 +35,7 @@ section {
   justify-content: center;
 }
 
+
 button {
   font-family: "Press Start 2P", cursive;
   font-size: large;
@@ -45,6 +46,7 @@ button {
   width: 250px;
   height: 80px;
 }
+
 
 .player-emoji {
   font-size: 100px;
