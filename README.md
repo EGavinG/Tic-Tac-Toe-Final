@@ -35,7 +35,7 @@ You can:
 
 1. Win
 2. Draw
-3. Can't click on a square if there's already an :alien: or :rocket: on it:
+3. Can't click on a square if there's already an 🛸: or :rocket: on it:
 4. Header showcases who's next, who wins, and when there is a draw
 5. When a player wins, their wins are displayed on the side panels respectively
 6. If desired, I've supplied a reset score button and color change button
